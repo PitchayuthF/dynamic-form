@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["unused-imports"],
+  "ignorePatterns": ["*.d.ts"],
+  "rules": {
+    "react-hooks/exhaustive-deps": "off",
+    "unused-imports/no-unused-imports": "error"
+  }
 }

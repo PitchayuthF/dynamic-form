@@ -1,0 +1,145 @@
+{
+  "data": {
+    "banner": "https://static.wingify.com/gcp/uploads/2021/05/FT-banner-4-1024x268.jpg",
+    "sections": [
+      {
+        "title": "ข้อมูลส่วนตัว",
+        "inputs": [
+          {
+            "name": "prefix",
+            "label": "Prefix",
+            "type": "dropdown",
+            "colSpan": 3,
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "Prefix Name is required"
+              }
+            },
+            "options": [
+              { "label": "Mr.", "value": "Mr" },
+              { "label": "Miss.", "value": "Miss" }
+            ]
+          },
+          {
+            "name": "firstName",
+            "label": "First Name",
+            "type": "text",
+            "colSpan": 4.5,
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "First Name is required"
+              },
+              "minLength": {
+                "value": 3,
+                "message": "First Name should have at least 3 characters"
+              }
+            }
+          },
+          {
+            "name": "lastName",
+            "label": "Last Name",
+            "type": "text",
+            "colSpan": 4.5,
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "Last Name is required"
+              },
+              "maxLength": {
+                "value": 10,
+                "message": "Last Name maximum is 10 characters"
+              }
+            }
+          },
+          {
+            "name": "email",
+            "label": "email",
+            "type": "text",
+            "colSpan": 6,
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "email is required"
+              },
+              "pattern": {
+                "value": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+                "message": "email is invalid"
+              }
+            }
+          },
+          {
+            "name": "address",
+            "label": "Address",
+            "type": "text"
+          },
+          {
+            "name": "thailandExpo",
+            "label": "ท่านเคยเข้าร่วม Thailand Expo หรือไม่",
+            "type": "radio",
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "Thailand Expo is required"
+              }
+            },
+            "options": [
+              { "label": "ไม่", "value": "test" },
+
+              { "label": "ใช่", "value": "Yes" }
+            ]
+          },
+          {
+            "name": "consent",
+            "label": "กรุณายินยอม <strong>เดี๋ยวนี้ !!! </strong> <a href='https://google.co.th' target='_blank' style='color: red'>click </a> ",
+            "type": "checkbox",
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "Consent is required"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "title": "สวัสดี",
+        "inputs": [
+          {
+            "name": "date",
+            "label": "Date of Birth",
+            "type": "text",
+            "colSpan": 4.5,
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "Date is required"
+              },
+              "pattern": {
+                "value": "(\\d{1,2}\\/\\d{1,2}\\/\\d{4})",
+                "message": "Date is invalid"
+              }
+            }
+          },
+          {
+            "name": "mobile",
+            "label": "เบอร์โทร",
+            "type": "text",
+            "colSpan": 4.5,
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "Mobile is required"
+              },
+              "pattern": {
+                "value": "(\\d{9,10})",
+                "message": "Mobile is invalid"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
