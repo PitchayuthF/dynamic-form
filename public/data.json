@@ -3,7 +3,7 @@
     "banner": "https://static.wingify.com/gcp/uploads/2021/05/FT-banner-4-1024x268.jpg",
     "sections": [
       {
-        "title": "ข้อมูลส่วนตัว",
+        "name": "information",
         "inputs": [
           {
             "name": "prefix",
@@ -85,56 +85,18 @@
               }
             },
             "options": [
-              { "label": "ไม่", "value": "test" },
-
-              { "label": "ใช่", "value": "Yes" }
+              { "label": "ใช่", "value": "Yes" },
+              { "label": "ไม่", "value": "No" }
             ]
           },
           {
             "name": "consent",
-            "label": "กรุณายินยอม <strong>เดี๋ยวนี้ !!! </strong> <a href='https://google.co.th' target='_blank' style='color: red'>click </a> ",
+            "label": "กรุณายินยอม <strong>เดี๋ยวนี้ !!! </strong> <a href='https://google.co.th' target='_blank' style='color: red'>click </a>",
             "type": "checkbox",
             "validation": {
               "required": {
                 "value": true,
                 "message": "Consent is required"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "title": "สวัสดี",
-        "inputs": [
-          {
-            "name": "date",
-            "label": "Date of Birth",
-            "type": "text",
-            "colSpan": 4.5,
-            "validation": {
-              "required": {
-                "value": true,
-                "message": "Date is required"
-              },
-              "pattern": {
-                "value": "(\\d{1,2}\\/\\d{1,2}\\/\\d{4})",
-                "message": "Date is invalid"
-              }
-            }
-          },
-          {
-            "name": "mobile",
-            "label": "เบอร์โทร",
-            "type": "text",
-            "colSpan": 4.5,
-            "validation": {
-              "required": {
-                "value": true,
-                "message": "Mobile is required"
-              },
-              "pattern": {
-                "value": "(\\d{9,10})",
-                "message": "Mobile is invalid"
               }
             }
           }

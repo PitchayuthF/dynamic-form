@@ -5,7 +5,6 @@ import { styled } from "@mui/system";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { blue, grey } from "@mui/material/colors";
 import { FormType } from "@/hooks/useFormInputData";
-import { useBrowserLanguage } from "@/hooks/useBrowserLanguage";
 import { useTranslation } from "react-i18next";
 import { Grid } from "@mui/material";
 import ErrorLabel from "./ErrorLabel";
@@ -18,14 +17,13 @@ type InputTextProps = {
 };
 
 export default function InputText({ item, register, errors }: InputTextProps) {
-  const lang = useBrowserLanguage();
-  const { t } = useTranslation();
+  const { t } = useTranslation("register");
 
   return (
     <Grid item sm={item?.colSpan ?? 12} xs={12}>
       <FormControl key={item.name}>
         <Label
-          label={t(`${lang}.input.${item.name}`)}
+          label={t(`input.${item.name}.label`)}
           required={item.validation?.required?.value}
         />
 
@@ -34,7 +32,19 @@ export default function InputText({ item, register, errors }: InputTextProps) {
             ...item.validation,
             pattern: {
               value: new RegExp(item.validation?.pattern?.value),
-              message: item.validation?.pattern?.message,
+              message: t(`input.${item.name}.validation.pattern`),
+            },
+            required: {
+              value: item.validation?.required?.value,
+              message: t(`input.${item.name}.validation.required`),
+            },
+            minLength: {
+              value: item.validation?.minLength?.value,
+              message: t(`input.${item.name}.validation.minLength`),
+            },
+            maxLength: {
+              value: item.validation?.maxLength?.value,
+              message: t(`input.${item.name}.validation.maxLength`),
             },
           })}
         />

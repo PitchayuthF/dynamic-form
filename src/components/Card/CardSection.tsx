@@ -1,21 +1,17 @@
 import { CardContent, Grid, Typography } from "@mui/material";
 import { CardBox, CardContainer } from "./styles";
-import {
-  Control,
-  FieldErrors,
-  UseFormRegister,
-  UseFormSetValue,
-} from "react-hook-form";
+import { Control, FieldErrors, UseFormRegister } from "react-hook-form";
 import InputText from "../Input/InputText";
-import { FormType, RegisterFormResponse } from "@/hooks/useFormInputData";
+import { FormType } from "@/hooks/useFormInputData";
 import InputDropDown from "../Input/InputDropdown";
 import InputCheckbox from "../Input/InputCheckbox";
 import InputRadio from "../Input/InputRadio";
+import { useTranslation } from "react-i18next";
 
 type CardSectionProps = {
   register: UseFormRegister<any>;
   errors: FieldErrors<any>;
-  section: { title: string; inputs: FormType[] };
+  section: { name: string; inputs: FormType[] };
   control: Control<any, any>;
 };
 
@@ -25,6 +21,8 @@ const CardSection = ({
   section,
   control,
 }: CardSectionProps) => {
+  const { t } = useTranslation("register");
+
   const renderInputType = (item: FormType) => {
     if (item.type === "text")
       return (
@@ -73,7 +71,7 @@ const CardSection = ({
       <CardContainer>
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary">
-            {section?.title}
+            {t(`sections.${section?.name}`)}
           </Typography>
           <Grid container spacing={2}>
             {section?.inputs?.map((item) => renderInputType(item))}

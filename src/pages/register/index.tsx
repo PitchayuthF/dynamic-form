@@ -9,12 +9,13 @@ import CardSection from "@/components/Card/CardSection";
 import { useFormInputData } from "@/hooks/useFormInputData";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useBrowserLanguage } from "@/hooks/useBrowserLanguage";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default function RegisterPage() {
   const schema = useFormInputData();
-  const lang = useBrowserLanguage();
 
-  const { t } = useTranslation();
+  const { t } = useTranslation("register");
 
   const {
     register,
@@ -32,7 +33,7 @@ export default function RegisterPage() {
       <Banner src={schema.data.banner} alt="banner" />
 
       <Typography variant="h1" textAlign="center">
-        {t(`${lang}.title`)}
+        {t('title')}
       </Typography>
 
       <form
@@ -41,7 +42,7 @@ export default function RegisterPage() {
       >
         {schema.data.sections.map((section) => (
           <CardSection
-            key={section.title}
+            key={section.name}
             register={register}
             errors={errors}
             section={section}
@@ -51,10 +52,10 @@ export default function RegisterPage() {
 
         <Button
           type="submit"
-          variant="outlined"
+          variant="contained"
           sx={{ margin: "2rem", alignSelf: "end" }}
         >
-          {t(`${lang}.buttonSubmit`)}
+          {t('buttonSubmit')}
         </Button>
       </form>
     </div>
@@ -62,5 +63,15 @@ export default function RegisterPage() {
 }
 
 RegisterPage.getLayout = function getLayout(page: ReactElement) {
-  return <ContainerLayout>{page}</ContainerLayout>;
+  return (
+    <ContainerLayout>
+      <Navbar>{page}</Navbar>
+    </ContainerLayout>
+  );
 };
+
+// export const getServerSideProps = async ({ locale }) => ({
+//   props: {
+//       ...(await serverSideTranslations(locale, ['common']))
+//   }
+// });

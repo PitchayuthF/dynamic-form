@@ -1,3 +1,53 @@
 {
-  "title": "ลงทะเบียนเข้าร่วม"
+  "title": "ลงทะเบียนเข้าร่วม",
+  "buttonSubmit": "ยืนยัน",
+  "sections": {
+    "information": "ข้อมูลส่วนตัว"
+  },
+  "input": {
+    "firstName": {
+      "label": "ชื่อ",
+      "validation": {
+        "required": "กรุณาใส่ชื่อ",
+        "minLength": "ชื่อต้องยาว 3 ตัวอักษรขึ้นไป"
+      }
+    },
+    "lastName": {
+      "label": "นามสกุล",
+      "validation": {
+        "required": "กรุณาใส่นามสกุล",
+        "maxLength": "นามสกุลห้ามเกิน 10 ตัวอักษร"
+      }
+    },
+    "address": {
+      "label": "ที่อยู่"
+    },
+    "email": {
+      "label": "email",
+      "validation": {
+        "required": "กรุณาใส่อีเมล",
+        "pattern": "อีเมลไม่ถูกต้อง"
+      }
+    },
+    "prefix": {
+      "label": "คำนำหน้า",
+      "options": ["นาย", "นางสาว"],
+      "validation": {
+        "required": "กรุณาใส่คำนำหน้า"
+      }
+    },
+    "thailandExpo": {
+      "label": "ท่านเคยเข้าร่วม Thailand Expo หรือไม่",
+      "options": ["ใช่", "ไม่"],
+      "validation": {
+        "required": "กรุณาเลือก"
+      }
+    },
+    "consent": {
+      "label": "กรุณายินยอม <strong>เดี๋ยวนี้ !!! </strong> <a href='https://google.co.th' target='_blank' style='color: red'>click </a>",
+      "validation": {
+        "required": "กรุณาติ๊ก"
+      }
+    }
+  }
 }

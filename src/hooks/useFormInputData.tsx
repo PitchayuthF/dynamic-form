@@ -6,7 +6,7 @@ export type RegisterFormResponse = {
   data: {
     banner: string;
     sections: {
-      title: string;
+      name: string;
       inputs: FormType[];
     }[];
   };

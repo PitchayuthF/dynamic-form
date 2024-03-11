@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import { NextPage } from "next";
 import { ReactElement, ReactNode, useEffect } from "react";
-import { useRouter } from "next/router";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
@@ -25,21 +24,20 @@ const kanit = Kanit({
 });
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  useEffect(() => {
-    let detectedLocale = "en";
-    const browserLang = navigator.language;
-    const supportedLocales = ["en", "th"];
+  // useEffect(() => {
+  //   let detectedLocale = "en";
+  //   const browserLang = navigator.language;
+  //   const supportedLocales = ["en", "th"];
 
-    if (supportedLocales.includes(browserLang)) {
-      detectedLocale = browserLang;
-    }
+  //   if (supportedLocales.includes(browserLang)) {
+  //     detectedLocale = browserLang;
+  //   }
 
-    if (router.pathname === "/register") {
-      // router.replace(`/${detectedLocale}${router.pathname}`);
-    }
-  }, [router.pathname]);
+  //   if (router.pathname === "/register") {
+  //   }
+  // }, [router.pathname]);
 
   const getLayout = Component.getLayout || ((page) => page);
 

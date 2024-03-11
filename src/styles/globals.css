@@ -72,3 +72,9 @@ input[type="radio" i] {
   margin-right: 16px;
   cursor: pointer;
 }
+
+button {
+  border: none;
+  borderradius: 8;
+  cursor: pointer;
+}

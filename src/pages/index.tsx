@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { Kanit } from "next/font/google";
-import theme from "@/pages/theme";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import { ThemeProvider } from "@emotion/react";
+
 
 const kanit = Kanit({
   subsets: ["latin"],

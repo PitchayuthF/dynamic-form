@@ -1,3 +1,53 @@
 {
-  "title": "registration"
+  "title": "registration",
+  "buttonSubmit": "Submit",
+  "sections": {
+    "information": "information"
+  },
+  "input": {
+    "firstName": {
+      "label": "first name",
+      "validation": {
+        "required": "First Name is required",
+        "minLength": "First Name should have at least 3 characters"
+      }
+    },
+    "lastName": {
+      "label": "last name",
+      "validation": {
+        "required": "Last Name is required",
+        "maxLength": "Last Name maximum is 10 characters"
+      }
+    },
+    "address": {
+      "label": "Address"
+    },
+    "email": {
+      "label": "email",
+      "validation": {
+        "required": "Email is required",
+        "pattern": "Email is invalid"
+      }
+    },
+    "prefix": {
+      "label": "prefix",
+      "options": ["Mr.", "Miss"],
+      "validation": {
+        "required": "Prefix is required"
+      }
+    },
+    "thailandExpo": {
+      "label": "do you have join the Thailand Expo",
+      "options": ["yes", "no"],
+      "validation": {
+        "required": "thailandExpo is required"
+      }
+    },
+    "consent": {
+      "label": "Confirm the consent <strong>Please !!! </strong> <a href='https://google.co.th' target='_blank' style='color: red'>click </a>",
+      "validation": {
+        "required": "consent is required"
+      }
+    }
+  }
 }
