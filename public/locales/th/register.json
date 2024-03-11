@@ -23,7 +23,7 @@
       "label": "ที่อยู่"
     },
     "email": {
-      "label": "email",
+      "label": "อีเมล",
       "validation": {
         "required": "กรุณาใส่อีเมล",
         "pattern": "อีเมลไม่ถูกต้อง"
@@ -34,6 +34,25 @@
       "options": ["นาย", "นางสาว"],
       "validation": {
         "required": "กรุณาใส่คำนำหน้า"
+      }
+    },
+    "idNoType": {
+      "label": "เลือกประเภทบัตร",
+      "options": ["บัตรประชาชน", "พาสปอร์ต"],
+      "validation": {
+        "required": "Prefix is required"
+      }
+    },
+    "idNo": {
+      "label": "บัตรประชาชน",
+      "validation": {
+        "required": "กรุณาใส่บัตรประชาชน"
+      }
+    },
+    "passport": {
+      "label": "พาสปอร์ต",
+      "validation": {
+        "required": "กรุณาใส่พาสปอร์ต"
       }
     },
     "thailandExpo": {

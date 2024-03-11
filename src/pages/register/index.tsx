@@ -8,8 +8,6 @@ import CardSection from "@/components/Card/CardSection";
 
 import { useFormInputData } from "@/hooks/useFormInputData";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useBrowserLanguage } from "@/hooks/useBrowserLanguage";
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navbar from "@/components/Navbar/Navbar";
 
 export default function RegisterPage() {
@@ -21,8 +19,14 @@ export default function RegisterPage() {
     register,
     control,
     handleSubmit,
+    getValues,
+    watch,
     formState: { errors },
-  } = useForm<any>({});
+  } = useForm<any>({
+    defaultValues: {
+      idNoType: "idNo",
+    },
+  });
 
   const onSubmit: SubmitHandler<any> = (data) => console.log(data);
 
@@ -33,7 +37,7 @@ export default function RegisterPage() {
       <Banner src={schema.data.banner} alt="banner" />
 
       <Typography variant="h1" textAlign="center">
-        {t('title')}
+        {t("title")}
       </Typography>
 
       <form
@@ -47,6 +51,8 @@ export default function RegisterPage() {
             errors={errors}
             section={section}
             control={control}
+            getValues={getValues}
+            watch={watch}
           />
         ))}
 
@@ -55,7 +61,7 @@ export default function RegisterPage() {
           variant="contained"
           sx={{ margin: "2rem", alignSelf: "end" }}
         >
-          {t('buttonSubmit')}
+          {t("buttonSubmit")}
         </Button>
       </form>
     </div>

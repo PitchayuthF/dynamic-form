@@ -1,6 +1,12 @@
 import { CardContent, Grid, Typography } from "@mui/material";
 import { CardBox, CardContainer } from "./styles";
-import { Control, FieldErrors, UseFormRegister } from "react-hook-form";
+import {
+  Control,
+  FieldErrors,
+  UseFormGetValues,
+  UseFormRegister,
+  UseFormWatch,
+} from "react-hook-form";
 import InputText from "../Input/InputText";
 import { FormType } from "@/hooks/useFormInputData";
 import InputDropDown from "../Input/InputDropdown";
@@ -13,6 +19,8 @@ type CardSectionProps = {
   errors: FieldErrors<any>;
   section: { name: string; inputs: FormType[] };
   control: Control<any, any>;
+  getValues: UseFormGetValues<any>;
+  watch: UseFormWatch<any>;
 };
 
 const CardSection = ({
@@ -20,6 +28,8 @@ const CardSection = ({
   errors,
   section,
   control,
+  getValues,
+  watch,
 }: CardSectionProps) => {
   const { t } = useTranslation("register");
 
@@ -42,6 +52,8 @@ const CardSection = ({
           item={item}
           register={register}
           errors={errors}
+          getValues={getValues}
+          watch={watch}
         />
       );
 

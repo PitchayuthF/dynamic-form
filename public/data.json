@@ -99,6 +99,47 @@
                 "message": "Consent is required"
               }
             }
+          },
+          {
+            "name": "idNoType",
+            "label": "รหัสบัตรประชาชน",
+            "type": "dropdown",
+            "validation": {
+              "required": {
+                "value": true,
+                "message": "idNo is required"
+              }
+            },
+            "options": [
+              { "label": "บัตรประชาชน", "value": "idNo" },
+              { "label": "พาสปอร์ต", "value": "passport" }
+            ],
+            "idNoOptions": {
+              "idNo": {
+                "name": "idNo",
+                "label": "บัตรประชาชน",
+                "type": "text",
+                "colSpan": 6,
+                "validation": {
+                  "required": {
+                    "value": true,
+                    "message": "IdNo is required"
+                  }
+                }
+              },
+              "passport": {
+                "name": "passport",
+                "label": "พาสปอร์ต",
+                "type": "text",
+                "colSpan": 6,
+                "validation": {
+                  "required": {
+                    "value": true,
+                    "message": "Passport is required"
+                  }
+                }
+              }
+            }
           }
         ]
       }

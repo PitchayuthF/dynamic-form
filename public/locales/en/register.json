@@ -36,6 +36,25 @@
         "required": "Prefix is required"
       }
     },
+    "idNoType": {
+      "label": "Choose id type",
+      "options": ["IdNo.", "Passport"],
+      "validation": {
+        "required": "Prefix is required"
+      }
+    },
+    "idNo": {
+      "label": "id number",
+      "validation": {
+        "required": "Id number is required"
+      }
+    },
+    "passport": {
+      "label": "passport",
+      "validation": {
+        "required": "passport is required"
+      }
+    },
     "thailandExpo": {
       "label": "do you have join the Thailand Expo",
       "options": ["yes", "no"],
